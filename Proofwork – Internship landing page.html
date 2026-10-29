@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stintly – Internships where you ship real work and get verified</title>
+  <meta name="description"
+    content="Take a 15-question test, build real tasks, get trainer reviews, and earn a certificate anyone can verify.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400..700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff;
+      --tint: #EEF1FF;
+      --ink: #0F1535;
+      --mut: #586082;
+      --line: #DCE1F5;
+      --blue: #2B44FF;
+      --lime: #ffffff;
+      --red: #F2402E;
+      --ok: #12A150;
+      --r: 14px;
+      color-scheme: light;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    *,
+
+
+    *::before,
+    *::after {
+      box-sizing: inherit
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+      zoom: .9;
+      scrollbar-color: #2B44FF #f1f3fa;
+      scrollbar-width: thin;
+    }
+
+    /* custom #2B44FF scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f3fa;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #2B44FF;
+      border-radius: 999px;
+      border: 2px solid #f1f3fa;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1a32d4;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 17px/1.6 "Hanken Grotesk", system-ui, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+      line-height: 1.02;
+      letter-spacing: -.025em;
+      margin: 0
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.6rem);
+      font-weight: 800
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 4.6vw, 3.8rem);
+      font-weight: 700
+    }
+
+    h3 {
+      font-size: 1.3rem
+    }
+
+    p {
+      margin: 0
+    }
+
+    a {
+      color: inherit
+    }
+
+    .w {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px
+    }
+
+    section {
+      padding: 110px 0
+    }
+
+    .mut {
+      color: var(--mut)
+    }
+
+    .hl {
+      background: linear-gradient(transparent 58%, var(--lime) 58%);
+      padding: 0 .08em
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      font: 600 1rem "Hanken Grotesk";
+      padding: .85rem 1.4rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none
+    }
+
+    .btn.alt {
+      background: #fff;
+      color: var(--ink)
+    }
+
+    .btn.blue {
+      background: var(--blue);
+      border-color: var(--blue)
+    }
+
+    .btn:disabled {
+      opacity: .4;
+      cursor: not-allowed
+    }
+
+    /* floating pill island navbar */
+    header {
+      position: sticky;
+      top: 14px;
+      z-index: 100;
+      padding: 0 20px;
+      pointer-events: none
+    }
+
+    .nav-container {
+      max-width: 1060px;
+      margin: 0 auto;
+      pointer-events: auto
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(15, 21, 53, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px -4px rgba(15, 21, 53, 0.07), 0 2px 6px -1px rgba(15, 21, 53, 0.03);
+      height: 60px;
+      padding: 6px 8px 6px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .25s ease
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font: 800 1.25rem "Bricolage Grotesque";
+      text-decoration: none;
+      color: var(--ink)
+    }
+
+    .logo-icon {
+      width: 26px;
+      height: 26px;
+      color: var(--blue);
+      flex-shrink: 0
+    }
+
+    .logo i {
+      font-style: normal;
+      color: var(--blue)
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .92rem;
+      color: #374151;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: color .2s, background .2s
+    }
+
+    nav ul li a:hover {
+      color: var(--blue);
+      background: rgba(43, 68, 255, 0.05)
+    }
+
+    .nav-arrow {
+      opacity: .5;
+      margin-top: 1px;
+      transition: transform .2s, opacity .2s
+    }
+
+    nav ul li a:hover .nav-arrow {
+      opacity: 1;
+      transform: translateY(1px)
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
+
+    .nav-signin {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .92rem;
+      color: #374151;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: color .2s, background .2s
+    }
+
+    .nav-signin:hover {
+      color: var(--ink);
+      background: rgba(15, 21, 53, 0.05)
+    }
+
+    .nav-btn-start {
+      background: var(--blue);
+      color: #ffffff !important;
+      font: 600 .9rem "Hanken Grotesk";
+      padding: 9px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid var(--blue);
+      box-shadow: 0 4px 12px rgba(43, 68, 255, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    @media(max-width:860px) {
+
+      nav ul,
+      .nav-signin {
+        display: none
+      }
+
+      nav {
+        padding: 6px 8px 6px 14px
+      }
+    }
+
+    /* hero */
+    .hero {
+      padding: 70px 0 110px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center
+    }
+
+    .hero p.lead {
+      font-size: 1.25rem;
+      max-width: 30em;
+      margin: 26px 0 32px;
+      color: var(--mut)
+    }
+
+    .row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .facts {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      font-weight: 600
+    }
+
+    .facts b {
+      font: 800 2.4rem "Bricolage Grotesque";
+      display: block;
+      color: var(--blue)
+    }
+
+    .stage {
+      background: var(--blue);
+      border-radius: 28px;
+      padding: 34px 26px 28px;
+      position: relative;
+      transform: rotate(1.5deg)
+    }
+
+    .task {
+      background: #fff;
+      border-radius: var(--r);
+      padding: 22px;
+      position: relative;
+      transform: rotate(-1.5deg);
+      box-shadow: 0 22px 0 -8px rgba(15, 21, 53, .25)
+    }
+
+    .task h3 {
+      font-size: 1.15rem;
+      margin: 8px 0 14px
+    }
+
+    .badge {
+      display: inline-block;
+      font: 600 .8rem "Hanken Grotesk";
+      padding: .25rem .7rem;
+      border-radius: 99px;
+      background: #FFF3C4;
+      color: #7a5b00
+    }
+
+    .badge.ok {
+      background: #D8F5E3;
+      color: #0b6b35
+    }
+
+    .slots {
+      list-style: none;
+      margin: 0 0 16px;
+      padding: 0;
+      display: grid;
+      gap: 8px
+    }
+
+    .slots li {
+      border: 2px dashed var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: .92rem;
+      color: var(--mut);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      min-height: 46px
+    }
+
+    .slots li.on {
+      border: 2px solid var(--ink);
+      color: var(--ink);
+      background: var(--tint)
+    }
+
+    .slots li.on::before {
+      content: "✓";
+      color: #fff;
+      background: var(--ok);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      font-size: .75rem;
+      flex: none
+    }
+
+    .tray {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px
+    }
+
+    .chip {
+      border: 0;
+      background: var(--lime);
+      color: var(--ink);
+      font: 600 .9rem "Hanken Grotesk";
+      padding: .55rem .9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 3px 0 rgba(0, 0, 0, .25)
+    }
+
+    .chip:disabled {
+      opacity: .25;
+      box-shadow: none;
+      cursor: default;
+      transform: none
+    }
+
+    .tip {
+      color: #fff;
+      font-size: .95rem;
+      margin-top: 14px;
+      min-height: 1.5em
+    }
+
+    .stamp {
+      position: absolute;
+      right: 14px;
+      top: 70px;
+      border: 5px solid var(--red);
+      color: var(--red);
+      font: 800 2.2rem "Bricolage Grotesque";
+      padding: .1em .4em;
+      border-radius: 8px;
+      opacity: 0;
+      transform: rotate(-14deg);
+      pointer-events: none;
+      background: rgba(255, 255, 255, .7);
+      letter-spacing: .04em
+    }
+
+    @media(max-width:900px) {
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      .stage {
+        transform: none
+      }
+    }
+
+    /* journey */
+    .band {
+      background: var(--tint)
+    }
+
+    .head {
+      max-width: 780px;
+      margin-bottom: 56px
+    }
+
+    .head p {
+      margin-top: 16px;
+      font-size: 1.15rem;
+      color: var(--mut)
+    }
+
+    .journey {
+      position: relative;
+      padding-left: 70px
+    }
+
+    .rail {
+      position: absolute;
+      left: 21px;
+      top: 8px;
+      bottom: 8px;
+      width: 4px;
+      background: var(--line);
+      border-radius: 4px
+    }
+
+    .rail i {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--blue);
+      transform-origin: top;
+      transform: scaleY(0);
+      border-radius: 4px
+    }
+
+    .step {
+      position: relative;
+      padding: 0 0 54px;
+      max-width: 640px
+    }
+
+    .step:last-child {
+      padding: 0
+    }
+
+    .step::before {
+      content: attr(data-n);
+      position: absolute;
+      left: -70px;
+      top: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--line);
+      display: grid;
+      place-items: center;
+      font: 700 1.1rem "Bricolage Grotesque";
+      transition: .3s
+    }
+
+    .step.on::before {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      transform: scale(1.12)
+    }
+
+    .step p {
+      color: var(--mut);
+      margin-top: 6px
+    }
+
+    /* tracks */
+    .tracks {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: start
+    }
+
+    .tl {
+      border-top: 2px solid var(--ink)
+    }
+
+    .tl button {
+      all: unset;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      width: 100%;
+      padding: 20px 8px;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      font: 700 clamp(1.5rem, 3vw, 2.3rem) "Bricolage Grotesque";
+      transition: padding .25s, background .25s, color .25s
+    }
+
+    .tl button small {
+      font: 500 .95rem "Hanken Grotesk";
+      color: var(--mut)
+    }
+
+    .tl button:hover,
+    .tl button:focus-visible,
+    .tl button.on {
+      padding-left: 22px;
+      background: var(--lime)
+    }
+
+    .prev {
+      background: #fff;
+      border: 2px solid var(--ink);
+      border-radius: var(--r);
+      padding: 26px;
+      position: sticky;
+      top: 96px;
+      box-shadow: 8px 8px 0 var(--blue);
+      transition: transform .3s, box-shadow .3s
+    }
+
+    .prev:hover {
+      transform: translateY(-4px);
+      box-shadow: 8px 12px 0 var(--blue)
+    }
+
+    .prev h3 {
+      margin-bottom: 12px
+    }
+
+    .prev ul {
+      padding-left: 1.1em;
+      margin: 0;
+      display: grid;
+      gap: 8px
+    }
+
+    @media(max-width:900px) {
+      .tracks {
+        grid-template-columns: 1fr
+      }
+
+      .prev {
+        position: static
+      }
+    }
+
+    /* assessment */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center
+    }
+
+    @media(max-width:900px) {
+      .split {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .assess-card {
+      border: 2px solid var(--ink);
+      border-radius: 20px;
+      padding: 40px;
+      background: #fff;
+      text-align: center;
+      transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s
+    }
+
+    .assess-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(43, 68, 255, .13)
+    }
+
+    .assess-icon {
+      font-size: 3.2rem;
+      margin-bottom: 12px
+    }
+
+    .assess-card h3 {
+      margin-bottom: 12px
+    }
+
+    .assess-card>.mut {
+      margin-bottom: 20px
+    }
+
+    .assess-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: grid;
+      gap: 10px;
+      text-align: left;
+      font-weight: 500
+    }
+
+    .assess-list .check {
+      color: var(--blue);
+      font-weight: 700;
+      margin-right: 6px
+    }
+
+    .small {
+      font-size: .85rem;
+      color: var(--mut);
+      margin-top: 12px
+    }
+
+    /* chat */
+    .chat-app {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .3);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      background: #1e2035
+    }
+
+    .chat-sidebar {
+      background: #161829;
+      padding: 18px 0;
+      border-right: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .ch-item {
+      padding: 8px 16px;
+      color: rgba(255, 255, 255, .35);
+      font-size: .88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: .2s
+    }
+
+    .ch-item:hover,
+    .ch-item.active {
+      color: #fff;
+      background: rgba(255, 255, 255, .06)
+    }
+
+    .ch-hash {
+      color: rgba(255, 255, 255, .2);
+      margin-right: 6px;
+      font-weight: 700
+    }
+
+    .chat-main {
+      display: flex;
+      flex-direction: column
+    }
+
+    .chat-header {
+      background: rgba(255, 255, 255, .03);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .ch-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ok)
+    }
+
+    .ch-title {
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem
+    }
+
+    .ch-info {
+      margin-left: auto;
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .3)
+    }
+
+    .chat-body {
+      padding: 24px;
+      display: grid;
+      gap: 20px
+    }
+
+    .av {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      flex: none;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: .85rem;
+      background: var(--blue)
+    }
+
+    .msg {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      opacity: 0
+    }
+
+    .msg-content {
+      flex: 1
+    }
+
+    .msg-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 4px;
+      flex-wrap: wrap
+    }
+
+    .msg-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: .92rem
+    }
+
+    .msg-time {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .25)
+    }
+
+    .msg-text {
+      color: rgba(255, 255, 255, .7);
+      font-size: .94rem;
+      line-height: 1.55
+    }
+
+    .msg-text code {
+      background: rgba(255, 255, 255, .08);
+      padding: .15em .45em;
+      border-radius: 4px;
+      font: 500 .88em ui-monospace, Menlo, monospace;
+      color: #7aa2f7
+    }
+
+    .status-tag {
+      font-size: .7rem;
+      font-weight: 600;
+      padding: .18rem .55rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: .03em
+    }
+
+    .st-pending {
+      background: rgba(255, 199, 0, .12);
+      color: #ffb800
+    }
+
+    .st-changes {
+      background: rgba(242, 64, 46, .12);
+      color: #f2402e
+    }
+
+    .st-resubmit {
+      background: rgba(43, 68, 255, .15);
+      color: #7aa2f7
+    }
+
+    .st-approved {
+      background: rgba(18, 161, 80, .12);
+      color: #3dd68c
+    }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      background: rgba(0, 0, 0, .15)
+    }
+
+    .chat-plus {
+      color: rgba(255, 255, 255, .3);
+      font-size: 1.3rem;
+      cursor: pointer
+    }
+
+    .chat-input input {
+      flex: 1;
+      background: rgba(255, 255, 255, .06);
+      border: none;
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: #fff;
+      font: 400 .92rem "Hanken Grotesk"
+    }
+
+    .chat-input input::placeholder {
+      color: rgba(255, 255, 255, .25)
+    }
+
+    .chat-send {
+      background: var(--blue);
+      border: none;
+      color: #fff;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem
+    }
+
+    @media(max-width:700px) {
+      .chat-app {
+        grid-template-columns: 1fr
+      }
+
+      .chat-sidebar {
+        display: none
+      }
+    }
+
+    /* modern squad & solo cards */
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 44px
+    }
+
+    @media(max-width:880px) {
+      .pair {
+        grid-template-columns: 1fr;
+        gap: 24px
+      }
+    }
+
+    .pc {
+      position: relative;
+      border-radius: 24px;
+      padding: 38px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s ease, border-color .3s
+    }
+
+    .pc.solo {
+      background: #ffffff;
+      border: 1px solid rgba(43, 68, 255, 0.14);
+      box-shadow: 0 10px 30px -10px rgba(15, 21, 53, 0.06), 0 20px 40px -15px rgba(43, 68, 255, 0.05);
+      color: var(--ink)
+    }
+
+    .pc.solo:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px -12px rgba(43, 68, 255, 0.16);
+      border-color: rgba(43, 68, 255, 0.3)
+    }
+
+    .pc.team {
+      background: radial-gradient(120% 120% at 100% 0%, #1a2559 0%, #0d1433 55%, #080c21 100%);
+      border: 1px solid rgba(66, 120, 255, 0.32);
+      box-shadow: 0 16px 40px -10px rgba(15, 21, 53, 0.35), 0 0 0 1px rgba(66, 120, 255, 0.15);
+      color: #ffffff
+    }
+
+    .pc.team:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px -10px rgba(43, 68, 255, 0.35), 0 0 0 1px rgba(66, 120, 255, 0.4);
+      border-color: rgba(99, 150, 255, 0.5)
+    }
+
+    .pc-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font: 700 .75rem "Hanken Grotesk";
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      width: fit-content
+    }
+
+    .pc.solo .pc-tag {
+      background: #EEF2FF;
+      color: var(--blue);
+      border: 1px solid rgba(43, 68, 255, 0.15)
+    }
+
+    .pc.team .pc-tag {
+      background: rgba(56, 189, 248, 0.12);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3)
+    }
+
+    .pc-header h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 8px
+    }
+
+    .pc.solo .pc-header h3 {
+      color: var(--ink)
+    }
+
+    .pc.team .pc-header h3 {
+      color: #ffffff
+    }
+
+    .pc-desc {
+      font-size: .98rem;
+      line-height: 1.55;
+      margin-bottom: 24px
+    }
+
+    .pc.solo .pc-desc {
+      color: var(--mut)
+    }
+
+    .pc.team .pc-desc {
+      color: rgba(255, 255, 255, 0.72)
+    }
+
+    .squad-sim {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px)
+    }
+
+    .squad-sim-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px
+    }
+
+    .squad-sim-title {
+      font-size: .88rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .squad-count-pill {
+      font-size: .78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(43, 68, 255, 0.35);
+      color: #A5C0FF;
+      border: 1px solid rgba(66, 120, 255, 0.4)
+    }
+
+    .cluster {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      margin: 8px 0 14px
+    }
+
+    .cluster .av {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      margin-left: -8px;
+      border: 2.5px solid #0d1433;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: .88rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      color: #fff
+    }
+
+    .cluster .av:first-child {
+      margin-left: 0
+    }
+
+    .cluster-count {
+      margin-left: 14px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85)
+    }
+
+    .squad-sim-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08)
+    }
+
+    .squad-btn-add {
+      background: rgba(255, 255, 255, 0.12) !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      color: #ffffff !important;
+      padding: .5rem 1rem !important;
+      font-size: .85rem !important;
+      border-radius: 999px !important;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .squad-hint {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, 0.55)
+    }
+
+    .pc-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: grid;
+      gap: 13px
+    }
+
+    .pc-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .95rem;
+      line-height: 1.45
+    }
+
+    .pc.solo .pc-features li {
+      color: #2D3748
+    }
+
+    .pc.team .pc-features li {
+      color: rgba(255, 255, 255, 0.88)
+    }
+
+    .pc-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      margin-top: 1px
+    }
+
+    .pc.solo .pc-check {
+      background: #EEF2FF;
+      color: var(--blue)
+    }
+
+    .pc.team .pc-check {
+      background: rgba(56, 189, 248, 0.16);
+      color: #38BDF8
+    }
+
+    .pc-features strong {
+      font-weight: 600
+    }
+
+    .pc.solo .pc-features strong {
+      color: var(--ink)
+    }
+
+    .pc.team .pc-features strong {
+      color: #ffffff
+    }
+
+    .pc-actions {
+      margin-top: auto
+    }
+
+    .pc.solo .btn-solo {
+      width: 100%;
+      justify-content: center;
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink)
+    }
+
+    .pc.team .btn-team {
+      width: 100%;
+      justify-content: center;
+      background: #ffffff;
+      color: var(--ink);
+      border-color: #ffffff;
+      font-weight: 700
+    }
+
+    /* cert */
+    .cert-wrap {
+      perspective: 1100px;
+      display: grid;
+      place-items: center
+    }
+
+    .cert {
+      width: min(100%, 520px);
+      aspect-ratio: 1.42;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform .7s cubic-bezier(.2, .8, .2, 1)
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      padding: 26px 30px;
+      background: #fff;
+      border: 2px solid var(--ink);
+      box-shadow: 0 30px 50px -20px rgba(43, 68, 255, .45);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden
+    }
+
+    .face.front::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 35%, rgba(255, 209, 102, .55) 50%, transparent 65%);
+      transform: translateX(var(--sx, -120%));
+      pointer-events: none
+    }
+
+    .face.back {
+      transform: rotateY(180deg);
+      background: var(--tint)
+    }
+
+    .seal {
+      position: absolute;
+      right: 26px;
+      bottom: 24px;
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font: 800 .8rem "Bricolage Grotesque";
+      text-align: center;
+      line-height: 1.1;
+      transform: rotate(-12deg);
+      border: 4px double #fff;
+      outline: 3px solid var(--red)
+    }
+
+    .cert h3 {
+      font-size: 1.9rem
+    }
+
+    .id {
+      font: 500 .85rem ui-monospace, Menlo, monospace;
+      color: var(--mut)
+    }
+
+    .vf {
+      display: flex;
+      gap: 8px;
+      margin: 14px 0 8px
+    }
+
+    .vf input {
+      flex: 1;
+      min-width: 0;
+      border: 2px solid var(--ink);
+      border-radius: 99px;
+      padding: .6rem 1rem;
+      font: 500 1rem "Hanken Grotesk"
+    }
+
+    #vr {
+      font-weight: 600;
+      min-height: 1.6em
+    }
+
+    .ok {
+      color: var(--ok)
+    }
+
+    .no {
+      color: var(--red)
+    }
+
+    /* faq */
+    .faq {
+      max-width: 820px
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0
+    }
+
+    summary {
+      cursor: pointer;
+      font: 700 1.3rem "Bricolage Grotesque";
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    summary::after {
+      content: "+";
+      transition: transform .25s
+    }
+
+    details[open] summary::after {
+      transform: rotate(45deg);
+      color: var(--blue)
+    }
+
+    details p {
+      margin-top: 10px;
+      color: var(--mut)
+    }
+
+    summary::-webkit-details-marker {
+      display: none
+    }
+
+    /* cta */
+    .cta {
+      background: var(--blue);
+      color: #fff;
+      border-radius: 28px;
+      padding: 80px 40px;
+      text-align: center;
+      margin-bottom: 110px
+    }
+
+    .cta .btn {
+      background: var(--lime);
+      border-color: var(--lime);
+      color: var(--ink);
+      margin-top: 30px
+    }
+
+    /* footer */
+    .site-footer {
+      background: #0a0c1a;
+      color: rgba(255, 255, 255, .55);
+      padding: 80px 0 0
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+      gap: 40px
+    }
+
+    .footer-brand p {
+      margin: 16px 0 20px;
+      line-height: 1.7;
+      max-width: 280px;
+      font-size: .94rem
+    }
+
+    .footer-brand .logo i {
+      color: #7aa2f7
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .07);
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      color: rgba(255, 255, 255, .6);
+      font-size: .9rem;
+      transition: background .25s, transform .25s, color .25s
+    }
+
+    .footer-social a:hover {
+      background: var(--blue);
+      color: #fff;
+      transform: translateY(-3px)
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-family: "Bricolage Grotesque";
+      font-size: 1rem;
+      margin: 0 0 8px
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      font-size: .92rem;
+      transition: color .2s
+    }
+
+    .footer-col a:hover {
+      color: #fff
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      margin-top: 60px;
+      padding: 24px 0 30px;
+      font-size: .85rem
+    }
+
+    @media(max-width:800px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important
+      }
+
+      .msg {
+        opacity: 1
+      }
+    }
+
+    /* Fullscreen Video Intro Loader */
+    #video-loader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      min-width: 100vw;
+      min-height: 100vh;
+      z-index: 999999;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      zoom: 1.111111;
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease;
+    }
+
+    #video-loader-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #video-loader-player {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .loader-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2B44FF, #38BDF8);
+      width: 0%;
+      transition: width 5s linear;
+      z-index: 1000000;
+    }
+  </style>
+</head>
+
+<body style="overflow:hidden">
+  <!-- Fullscreen Video Intro Loader -->
+  <div id="video-loader-overlay">
+    <video id="video-loader-player" src="gemini_generated_video_04a7692c.mp4" autoplay muted playsinline></video>
+    <div class="loader-progress" id="loader-progress"></div>
+  </div>
+  <header>
+    <div class="nav-container">
+      <nav>
+        <div class="nav-left">
+          <a class="logo" href="#">
+            <svg class="logo-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 8L20 20M20 8L8 20M5 14H23M14 5V23" stroke="#2B44FF" stroke-width="2" stroke-linecap="round" />
+              <circle cx="14" cy="14" r="3.2" fill="#2B44FF" />
+              <circle cx="5" cy="14" r="2.4" fill="#2B44FF" />
+              <circle cx="23" cy="14" r="2.4" fill="#2B44FF" />
+              <circle cx="8" cy="8" r="2.4" fill="#2B44FF" />
+              <circle cx="20" cy="8" r="2.4" fill="#2B44FF" />
+              <circle cx="8" cy="20" r="2.4" fill="#2B44FF" />
+              <circle cx="20" cy="20" r="2.4" fill="#2B44FF" />
+            </svg>
+            <span>Stint<i>ly</i></span>
+          </a>
+          <ul>
+            <li>
+              <a href="#tracks">
+                Tracks
+                <svg class="nav-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#teams">
+                Pricing
+                <svg class="nav-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </a>
+            </li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#verify">Verify</a></li>
+          </ul>
+        </div>
+        <div class="nav-right">
+          <a class="nav-signin" href="#test">Sign in</a>
+          <a class="nav-btn-start" href="#test">Get started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="w hero">
+      <div>
+        <h1>Do the work. <span class="hl">Get the proof.</span></h1>
+        <p class="lead">Real tasks, a trainer who reads your code, and a certificate that anyone can check online. No
+          fake logos, no vague promises.</p>
+        <div class="row"><a class="btn blue" href="#test">Start free assessment</a><a class="btn alt" href="#tracks">See
+            the tracks</a></div>
+        <div class="facts"><span><b>15</b>question test</span><span><b>3</b>proofs per
+            task</span><span><b>5</b>teammates max</span><span><b>1</b>verifiable certificate</span></div>
+      </div>
+      <div class="stage" aria-label="Interactive task card demo">
+        <div class="task" id="task">
+          <span class="badge" id="st">Not submitted</span>
+          <h3>Task 3: Build a login form with validation</h3>
+          <ul class="slots" id="slots">
+            <li data-k="shot">Screenshot missing</li>
+            <li data-k="desc">Description missing</li>
+            <li data-k="gh">GitHub link missing</li>
+          </ul>
+          <button class="btn blue" id="sub" disabled>Submit for review</button>
+          <div class="stamp" id="stamp">APPROVED</div>
+        </div>
+        <div class="tray" id="tray"><button class="chip" data-k="shot">+ Screenshot</button><button class="chip"
+            data-k="desc">+ Description</button><button class="chip" data-k="gh">+ GitHub link</button></div>
+        <p class="tip" id="tip">Try submitting with only one proof. Add all three to unlock it.</p>
+      </div>
+    </div>
+
+    <section class="band" id="how">
+      <div class="w">
+        <div class="head">
+          <h2>From sign-up to certificate in five steps</h2>
+          <p>Each step unlocks the next, so you always know where you stand.</p>
+        </div>
+        <div class="journey" id="jr">
+          <div class="rail"><i id="rf"></i></div>
+          <div class="step" data-n="1">
+            <h3>Register and verify</h3>
+            <p>Sign up with your email, confirm it, and fill in your profile.</p>
+          </div>
+          <div class="step" data-n="2">
+            <h3>Take the assessment</h3>
+            <p>Answer 15 questions for your track. A higher score means a lower fee.</p>
+          </div>
+          <div class="step" data-n="3">
+            <h3>Build real tasks</h3>
+            <p>Push code to GitHub, then submit screenshots, a description, and the link.</p>
+          </div>
+          <div class="step" data-n="4">
+            <h3>Get a trainer review</h3>
+            <p>Approved, or sent back with comments. Fix it and resubmit as many times as the policy allows.</p>
+          </div>
+          <div class="step" data-n="5">
+            <h3>Earn your certificate</h3>
+            <p>Finish every mandatory task and your certificate is generated, emailed, and publicly verifiable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tracks">
+      <div class="w">
+        <div class="head">
+          <h2>Pick a track. See what you'll ship.</h2>
+          <p>Hover or tap a row to preview the kind of tasks inside.</p>
+        </div>
+        <div class="tracks">
+          <div class="tl" id="tl"></div>
+          <aside class="prev" aria-live="polite">
+            <h3 id="pt"></h3>
+            <ul id="pl"></ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="test">
+      <div class="w split">
+        <div>
+          <h2>Score higher, <span class="hl">pay less.</span></h2>
+          <p class="mut" style="margin-top:18px">Before you enroll, you take a 15-question test for your track. The
+            server scores it and applies the active discount. You see the base fee, the discount, and the final price
+            before paying.</p>
+        </div>
+        <div class="assess-card">
+          <div class="assess-icon">📝</div>
+          <h3>15-Question Assessment</h3>
+          <p class="mut">Personalized for your chosen track. Score higher to unlock bigger discounts on your enrollment
+            fee.</p>
+          <ul class="assess-list">
+            <li><span class="check">✓</span> 15 track-specific questions</li>
+            <li><span class="check">✓</span> Timed — approximately 10 minutes</li>
+            <li><span class="check">✓</span> Score-based discount applied instantly</li>
+            <li><span class="check">✓</span> Retake available if needed</li>
+          </ul>
+          <a class="btn blue" href="#">Sign in to take assessment →</a>
+          <p class="small" style="margin-top:14px">Free to take. No payment required until you see your score and
+            discount.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="review">
+      <div class="w">
+        <div class="head">
+          <h2>Your work gets read by a person</h2>
+          <p>Trainer comments work like a code review. You'll see exactly what to change.</p>
+        </div>
+        <div class="chat-app">
+          <div class="chat-sidebar">
+            <div class="ch-item active"><span class="ch-hash">#</span> task-3-review</div>
+            <div class="ch-item"><span class="ch-hash">#</span> task-2-review</div>
+            <div class="ch-item"><span class="ch-hash">#</span> general</div>
+          </div>
+          <div class="chat-main">
+            <div class="chat-header">
+              <div class="ch-dot"></div><span class="ch-title"># task-3-review</span><span class="ch-info">3
+                participants</span>
+            </div>
+            <div class="chat-body" id="th">
+              <div class="msg">
+                <div class="av" style="background:var(--blue)">Y</div>
+                <div class="msg-content">
+                  <div class="msg-meta"><span class="msg-name">You</span><span class="msg-time">Today at 2:14
+                      PM</span><span class="status-tag st-pending">Pending review</span></div>
+                  <div class="msg-text">Submitted Task 3 with 2 screenshots and the repo link.</div>
+                </div>
+              </div>
+              <div class="msg">
+                <div class="av" style="background:var(--ink)">T</div>
+                <div class="msg-content">
+                  <div class="msg-meta"><span class="msg-name" style="color:#f2402e">Trainer</span><span
+                      class="msg-time">Today at 3:42 PM</span><span class="status-tag st-changes">Changes
+                      requested</span></div>
+                  <div class="msg-text">Validation works, but the error shows after submit. Move the check into
+                    <code>onBlur</code> and resubmit.
+                  </div>
+                </div>
+              </div>
+              <div class="msg">
+                <div class="av" style="background:var(--blue)">Y</div>
+                <div class="msg-content">
+                  <div class="msg-meta"><span class="msg-name">You</span><span class="msg-time">Today at 5:08
+                      PM</span><span class="status-tag st-resubmit">Resubmitted v2</span></div>
+                  <div class="msg-text">Fixed in <code>a3f9c21</code>. Added a new screenshot of the inline errors.
+                  </div>
+                </div>
+              </div>
+              <div class="msg">
+                <div class="av" style="background:var(--ink)">T</div>
+                <div class="msg-content">
+                  <div class="msg-meta"><span class="msg-name" style="color:var(--ok)">Trainer</span><span
+                      class="msg-time">Today at 5:31 PM</span><span class="status-tag st-approved">Approved ✓</span>
+                  </div>
+                  <div class="msg-text">Clean. Task 4 is unlocked.</div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input"><span class="chat-plus">+</span><input type="text"
+                placeholder="Type your update or attach proof…" disabled><button class="chat-send" disabled>↵</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="teams">
+      <div class="w">
+        <div class="head">
+          <div class="pc-tag" style="margin-bottom:12px">COLLABORATION TRACKS</div>
+          <h2>Go solo or bring a squad</h2>
+          <p>Teams share one project, but every member gets their own certificate with their own name.</p>
+        </div>
+        <div class="pair">
+          <!-- Solo Card -->
+          <div class="pc solo">
+            <div>
+              <div class="pc-tag">⚡ INDEPENDENT PACING</div>
+              <div class="pc-header">
+                <h3>Solo Track</h3>
+              </div>
+              <p class="pc-desc">Work on your own timeline. Ideal for self-directed builders wanting complete autonomy
+                over milestones, commits, and progress.</p>
+              <ul class="pc-features">
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>Work at your own pace</strong> – no dependency on peer schedules</span>
+                </li>
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>Direct 1-on-1 code reviews</strong> from senior industry trainers</span>
+                </li>
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>One personal verified certificate</strong> with unique verifiable QR ID</span>
+                </li>
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>Dedicated GitHub repository</strong> hosted directly on your profile</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pc-actions">
+              <a class="btn btn-solo" href="#test">Start solo internship →</a>
+            </div>
+          </div>
+
+          <!-- Team / Squad Card -->
+          <div class="pc team">
+            <div>
+              <div class="pc-tag">👥 SQUAD MODE · UP TO 5</div>
+              <div class="pc-header">
+                <h3>Team of up to 5</h3>
+              </div>
+              <p class="pc-desc">Mirror real tech company dynamics. Divide modules, branch, review pull requests, and
+                ship together as a collaborative squad.</p>
+
+              <!-- Interactive Squad Simulator -->
+              <div class="squad-sim">
+                <div class="squad-sim-top">
+                  <span class="squad-sim-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Live Squad Simulator
+                  </span>
+                  <span class="squad-count-pill" id="squad-pill">1 of 5 slots filled</span>
+                </div>
+                <div class="cluster" id="cl" aria-live="polite"></div>
+                <div class="squad-sim-actions">
+                  <button class="btn squad-btn-add" id="add">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Add a teammate
+                  </button>
+                  <span class="squad-hint">Click to test live capacity</span>
+                </div>
+              </div>
+
+              <ul class="pc-features">
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>One leader invites registered peers</strong> to join the joint project</span>
+                </li>
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>Shared repository workflow</strong> with branches, reviews & merged PRs</span>
+                </li>
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>Separate certificate for each member</strong> with personalized ID</span>
+                </li>
+                <li>
+                  <span class="pc-check">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span><strong>Ideal for capstones</strong>, hackathons, and final-year team projects</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pc-actions">
+              <a class="btn btn-team" href="#test">Start as a squad →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="verify">
+      <div class="w split">
+        <div>
+          <h2>A certificate anyone can check</h2>
+          <p class="mut" style="margin-top:18px">Each certificate has a unique ID and QR code. Employers paste the ID on
+            a public page and see the holder, track, and issue date. Move your mouse over the card, then flip it.</p>
+          <div class="row" style="margin-top:26px"><button class="btn alt" id="flip">Flip certificate</button></div>
+        </div>
+        <div class="cert-wrap">
+          <div class="cert" id="cert">
+            <div class="face front">
+              <div>
+                <div class="id">Certificate of completion</div>
+                <h3 style="margin-top:10px">Aarav Sharma</h3>
+                <p class="mut">Full Stack Developer · 3 months<br>14 of 14 tasks approved</p>
+              </div>
+              <div class="id">ID ST-2026-0042</div>
+              <div class="seal">VERIFIED</div>
+            </div>
+            <div class="face back">
+              <div><b>Verify this certificate</b>
+                <p class="small" style="margin:4px 0 0">Scan the code or type the ID. Try the sample: ST-2026-0042</p>
+              </div>
+              <svg id="qr" width="86" height="86" viewBox="0 0 11 11" shape-rendering="crispEdges"
+                aria-hidden="true"></svg>
+              <div>
+                <form class="vf" id="vf"><input id="vi" aria-label="Certificate ID" placeholder="ST-2026-0000"><button
+                    class="btn blue" style="padding:.55rem 1.1rem">Verify</button></form>
+                <div id="vr" aria-live="polite"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="w">
+        <div class="head">
+          <h2>Questions students ask</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Who can join?</summary>
+            <p>Any college student or fresh graduate with a verified email address.</p>
+          </details>
+          <details>
+            <summary>How does the discount work?</summary>
+            <p>Your score on the 15-question test maps to a discount set by our admins. The final price is shown before
+              you pay.</p>
+          </details>
+          <details>
+            <summary>How do team internships work?</summary>
+            <p>A leader creates a team and invites up to four registered students. The team shares one project and each
+              member earns a separate certificate.</p>
+          </details>
+          <details>
+            <summary>How do I get my certificate?</summary>
+            <p>Once every mandatory task is approved, it is generated as a PDF, saved to your account, and emailed to
+              you.</p>
+          </details>
+          <details>
+            <summary>Is the certificate verifiable?</summary>
+            <p>Yes. Every certificate has a unique ID that anyone can check on our public verify page.</p>
+          </details>
+          <details>
+            <summary>What if my task needs changes?</summary>
+            <p>You get written feedback, update your work, and resubmit. Earlier versions stay in your history.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="w" style="padding-top:110px">
+      <div class="cta">
+        <h2>Ready to build something you can prove?</h2>
+        <p style="margin-top:14px;opacity:.85">The assessment is free and takes about ten minutes.</p><a class="btn"
+          href="#test">Start free assessment</a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="w">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="logo" href="#" style="color:#fff">Stint<i>ly</i></a>
+            <p>Internships with proof built in. Real tasks, real reviews, and certificates that anyone can verify
+              online.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Twitter/X">𝕏</a>
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="GitHub">⌂</a>
+              <a href="#" aria-label="YouTube">▶</a>
+              <a href="#" aria-label="Instagram">◉</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <a href="#tracks">Tracks</a>
+            <a href="#how">How it works</a>
+            <a href="#test">Assessment</a>
+            <a href="#teams">Teams</a>
+            <a href="#verify">Verify Certificate</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Press Kit</a>
+            <a href="#">Partners</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Report a Bug</a>
+            <a href="#">System Status</a>
+            <a href="#">Community</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <small>© 2026 Stintly. All rights reserved.</small>
+          <small>Made with care in India 🇮🇳</small>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script>
+    const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+    const rm = matchMedia("(prefers-reduced-motion:reduce)").matches;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* initial video loader (5s duration at 2x speed) */
+    (function () {
+      const loader = $("#video-loader-overlay");
+      const vid = $("#video-loader-player");
+      const bar = $("#loader-progress");
+      if (loader && vid) {
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+
+        function enforceSpeed() {
+          vid.playbackRate = 2.0;
+          vid.defaultPlaybackRate = 2.0;
+        }
+        enforceSpeed();
+        vid.addEventListener("play", enforceSpeed);
+        vid.addEventListener("loadedmetadata", enforceSpeed);
+        vid.play().catch(() => { });
+
+        requestAnimationFrame(() => {
+          if (bar) bar.style.width = "100%";
+        });
+
+        let finished = false;
+        function finish() {
+          if (finished) return;
+          finished = true;
+          loader.classList.add("fade-out");
+          document.documentElement.style.overflow = "";
+          document.body.style.overflow = "";
+          setTimeout(() => {
+            loader.style.display = "none";
+            vid.pause();
+          }, 650);
+        }
+
+        const timer = setTimeout(finish, 5000);
+
+        vid.addEventListener("timeupdate", () => {
+          if (vid.currentTime >= 5) {
+            clearTimeout(timer);
+            finish();
+          }
+        });
+
+        vid.addEventListener("ended", () => {
+          clearTimeout(timer);
+          finish();
+        });
+      }
+    })();
+    /* hero: proof card */
+    const sample = { shot: "login-page.png attached", desc: "Built the form and added inline validation.", gh: "github.com/you/login-form" };
+    const got = new Set(), sub = $("#sub"), tip = $("#tip");
+    $$("#tray .chip").forEach(b => b.onclick = () => {
+      const k = b.dataset.k, li = $(`#slots [data-k=${k}]`); li.textContent = sample[k]; li.classList.add("on"); b.disabled = true; got.add(k);
+      gsap.fromTo(li, { scale: .94 }, { scale: 1, duration: .4, ease: "back.out(3)" });
+      sub.disabled = got.size < 3; tip.textContent = got.size < 3 ? `${3 - got.size} more proof needed before you can submit.` : "All three proofs are in. Submit it.";
+    });
+    sub.onclick = () => {
+      if (sub.dataset.done) { location.reload(); return }
+      sub.dataset.done = 1; $("#st").textContent = "Pending review"; tip.textContent = "A trainer is reviewing…"; sub.disabled = true;
+      gsap.timeline().to("#task", { x: 6, yoyo: true, repeat: 5, duration: .06 }).add(() => {
+        const s = $("#st"); s.textContent = "Approved"; s.classList.add("ok"); tip.textContent = "Approved. Next task unlocked."; sub.textContent = "Try again"; sub.disabled = false;
+      }, "+=.5")
+        .fromTo("#stamp", { scale: 3.2, opacity: 0 }, { scale: 1, opacity: 1, duration: .28, ease: "power4.in" }, "<")
+        .to("#task", { y: 5, yoyo: true, repeat: 1, duration: .07 });
+    };
+    if (!rm) gsap.from(["#task", "#tray .chip"], { y: 40, opacity: 0, stagger: .12, duration: .7, ease: "power3.out", delay: .2 });
+    /* journey */
+    gsap.to("#rf", { scaleY: 1, ease: "none", scrollTrigger: { trigger: "#jr", start: "top 60%", end: "bottom 70%", scrub: true } });
+    $$(".step").forEach(s => ScrollTrigger.create({ trigger: s, start: "top 65%", toggleClass: { targets: s, className: "on" } }));
+    /* tracks */
+    const T = [["Java Developer", ["Build a REST API with Spring Boot", "Add JWT login and role checks", "Write unit tests for the service layer"]],
+    ["Full Stack Developer", ["Build a login flow with validation", "Create a CRUD app with Node and MongoDB", "Deploy it and share the live link"]],
+    ["Frontend Developer", ["Rebuild a landing page from a design", "Make a responsive dashboard", "Add accessible form validation"]],
+    ["Python Developer", ["Write a CLI that cleans CSV files", "Build a small Flask API", "Automate a report with a script"]],
+    ["Data Analyst", ["Clean a messy sales dataset", "Build a dashboard answering 3 questions", "Write up insights in plain language"]],
+    ["UI/UX Designer", ["Redesign one flow and explain why", "Build a clickable prototype", "Run a 5-person usability test"]]];
+    const tl = $("#tl");
+    function show(i) { $$("#tl button").forEach((b, j) => b.classList.toggle("on", i == j)); $("#pt").textContent = T[i][0] + ": sample tasks"; $("#pl").innerHTML = T[i][1].map(x => `<li>${x}</li>`).join("") }
+    T.forEach((t, i) => { const b = document.createElement("button"); b.innerHTML = `${t[0]}<small>1, 2 or 3 months</small>`;["mouseenter", "focus", "click"].forEach(e => b.addEventListener(e, () => show(i))); tl.append(b) }); show(1);
+    /* chat animation */
+    $$(".msg").forEach((m, i) => ScrollTrigger.create({ trigger: m, start: "top 85%", once: true, onEnter: () => gsap.fromTo(m, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .5, delay: i * .15, ease: "power2.out" }) }));
+    /* team */
+    const cols = ["#2B44FF", "#0EA5E9", "#6366F1", "#10B981", "#EC4899"],
+      nm = ["Y", "A", "R", "S", "M"],
+      roles = ["You (Leader)", "Aarav (FE)", "Riya (BE)", "Samir (UI)", "Meera (QA)"],
+      cl = $("#cl"), add = $("#add"), pill = $("#squad-pill");
+    let n = 1;
+    function draw() {
+      cl.innerHTML = nm.slice(0, n).map((x, i) => `<div class="av" style="background:${cols[i]}" title="${roles[i]}">${x}</div>`).join("") + `<span class="cluster-count">${n}/5 members</span>`;
+      if (pill) pill.textContent = `${n} of 5 slots filled`;
+      add.innerHTML = n >= 5
+        ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Team is full (Reset)`
+        : `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Add a teammate`;
+      if (n > 1 && !rm) gsap.from(cl.children[n - 1], { scale: 0, duration: .4, ease: "back.out(3)" });
+    }
+    add.onclick = () => { n = n >= 5 ? 1 : n + 1; draw(); };
+    draw();
+    /* certificate */
+    const cert = $("#cert"); let flipped = 0;
+    function pose(ry, rx) { cert.style.transform = `rotateY(${ry + (flipped ? 180 : 0)}deg) rotateX(${rx}deg)` }
+    cert.parentElement.addEventListener("mousemove", e => { if (rm) return; const r = cert.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; pose(x * 14, -y * 14); cert.style.setProperty("--sx", (x * 240) + "%") });
+    cert.parentElement.addEventListener("mouseleave", () => pose(0, 0));
+    $("#flip").onclick = () => { flipped ^= 1; pose(0, 0) };
+    const qr = $("#qr"); let q = "", seed = 42; for (let y = 0; y < 11; y++)for (let x = 0; x < 11; x++) { seed = (seed * 1103515245 + 12345) & 0x7fffffff; const f = (x < 3 && y < 3) || (x > 7 && y < 3) || (x < 3 && y > 7); if (f || seed % 3 == 0) q += `<rect x="${x}" y="${y}" width="1" height="1" fill="#0F1535"/>` } qr.innerHTML = q;
+    $("#vf").onsubmit = e => {
+      e.preventDefault(); const v = $("#vi").value.trim().toUpperCase(), r = $("#vr");
+      if (v === "ST-2026-0042") { r.className = "ok"; r.textContent = "Valid: Aarav Sharma, Full Stack Developer, issued 12 Mar 2026 (sample)" } else { r.className = "no"; r.textContent = "No certificate found for that ID. Check it and try again." }
+    };
+    /* vanilla-tilt for cards */
+    if (!rm) VanillaTilt.init(document.querySelectorAll(".pc, .prev, .assess-card"), { max: 6, speed: 400, glare: true, "max-glare": .1, scale: 1.02 });
+  </script>
+</body>
+
+</html>
